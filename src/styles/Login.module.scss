@@ -1,0 +1,69 @@
+@import './variables.scss';
+
+.loginContainer {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    justify-content: flex-end;
+    background: linear-gradient(to right, #EFF6FF, #FEF3C7);
+    overflow: auto;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    padding: $spacing-xl;
+    margin: $spacing-xl;
+    background-color: #F3E8FF;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 360px;
+
+    &.login {
+        height: 400px;
+    }
+
+    &.signup {
+        height: auto;
+    }
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    label {
+        color: $text-color;
+        font-weight: 500;
+    }
+
+    input {
+        background-color: $white;
+        border-color: $border-color;
+        color: $text-color;
+        border-radius: $border-radius;
+        padding: $spacing-sm;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+        }
+    }
+}
+
+.submitButton {
+    margin-top: auto;
+    background-color: $secondary-color;
+    color: darken($primary-color, 20%);
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: lighten($secondary-color, 5%);
+    }
+} 

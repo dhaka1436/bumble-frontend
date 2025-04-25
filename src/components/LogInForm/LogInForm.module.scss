@@ -1,0 +1,33 @@
+
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+    
+    background-color: white;
+
+    .inputContainer {
+        min-width: 300px;
+    }
+
+    .errorMessage {
+        color: red;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .button {
+        background-color: #6D28D9;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 80px;
+    }
+
+    
+} 
