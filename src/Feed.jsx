@@ -1,12 +1,47 @@
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { API_URL } from "./utils/constants";
+import { useState, useEffect } from "react";
+import { addFeed } from "./utils/feedSlice";
+import { useDispatch } from "react-redux";
+import UserCard from "./components/UserCard/UserCard";
+import styles from "./Feed.module.scss";
+
 
 const Feed = () => {
-    const user = useSelector(store => store.user);
 
-    if (!user) return null;
+    const user = useSelector(store => store.user);
+    const dispatch = useDispatch();
+    const feed = useSelector(store => store.feed);
+
+
+
+    const getFeed = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/user/feed`, { withCredentials: true });
+
+            if (response?.data?.status === "success") {
+                console.log("Feed from backend is", response?.data?.data);
+                dispatch(addFeed(response?.data?.data));
+            }
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
+
+
+    useEffect(() => {
+        if (feed) getFeed();
+    }, []);
+
+    if (!user || !feed) return null;
+
+    console.log("first user is ", feed);
+
     return (
-        <div>
-            <h1>Feed</h1>
+        <div className={styles.feedContainer}>
+            <UserCard user={feed[5]} />
         </div>
     )
 }

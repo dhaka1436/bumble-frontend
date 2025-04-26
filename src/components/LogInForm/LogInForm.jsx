@@ -17,8 +17,8 @@ const LogInForm = ({ setIsLogInForm }) => {
 
     const form = useForm({
         initialValues: {
-            email: 'o@gmail.com',
-            password: 'ILoveYouAnoush234h2iu@2493028kaSingh',
+            email: 'testuser1@example.com',
+            password: 'abcd1234@A',
         },
         validate: {
             email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),

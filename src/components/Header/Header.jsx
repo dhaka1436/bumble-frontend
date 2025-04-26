@@ -42,7 +42,7 @@ export const NonLoggedInHeader = () => {
 export const LoggedInHeader = () => {
     const navItems = [
         { label: "Home", link: "/" },
-        { label: "Matches", link: "/matches" },
+        { label: "Profile", link: "/profile" },
         { label: "Messages", link: "/messages" },
         { label: "Connections", link: "/connections" },
     ];
