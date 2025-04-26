@@ -12,6 +12,7 @@ import Profile from './Profile.jsx'
 import { Notifications } from '@mantine/notifications'
 import '@mantine/notifications/styles.css'
 import Connections from './Connections.jsx'
+import Requests from './Requests.jsx'
 
 function App() {
     const appLayout = createBrowserRouter([
@@ -35,6 +36,10 @@ function App() {
                     path: "/connections",
                     element: <Connections />
                 },
+                {
+                    path: "/requests",
+                    element: <Requests />
+                }
             ]
         },
     ])

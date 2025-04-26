@@ -45,6 +45,7 @@ export const LoggedInHeader = () => {
         { label: "Profile", link: "/profile" },
         { label: "Messages", link: "/messages" },
         { label: "Connections", link: "/connections" },
+        { label: "Requests", link: "/requests" },
     ];
 
     const user = useSelector(store => store.user);
