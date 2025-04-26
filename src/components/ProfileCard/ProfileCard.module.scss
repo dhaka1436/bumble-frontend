@@ -1,0 +1,157 @@
+.profileCard {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardHeader {
+    background: linear-gradient(to right, #4dabf7, #228be6);
+    
+    .headerContent {
+      padding: 20px;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+  }
+
+  .profileImage {
+    border: 3px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+  .userInfo {
+    padding: 10px 0;
+  }
+
+  .section {
+    margin: 10px 0;
+  }
+
+  .skillBadge {
+    transition: all 0.2s ease;
+    cursor: default;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #228be6;
+      color: white;
+    }
+  }
+
+  .editButton {
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .formSection {
+    margin-bottom: 15px;
+  }
+
+  .input {
+    margin-bottom: 10px;
+  }
+
+  .textarea {
+    margin-bottom: 15px;
+  }
+
+  .saveButton {
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .cancelButton {
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.editFormCard {
+  max-width: 600px;
+  margin: 15px auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow-y: scroll;
+  
+  .cardHeader {
+    background: linear-gradient(to right, #4dabf7, #228be6);
+    border-bottom: 1px solid #e0e0e0;
+    
+    .headerContent {
+      padding: 12px;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+  }
+  
+  .formSection {
+    margin-bottom: 10px;
+  }
+  
+  .input {
+    margin-bottom: 8px;
+    font-size: 14px;
+    
+    input, select {
+      height: 36px;
+    }
+  }
+  
+  .textarea {
+    margin-bottom: 10px;
+    font-size: 14px;
+    
+    textarea {
+      min-height: 60px;
+      max-height: 100px;
+    }
+  }
+  
+  .buttonGroup {
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  
+  .saveButton {
+    transition: all 0.2s ease;
+    font-size: 14px;
+    height: 36px;
+    padding: 0 15px;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  .cancelButton {
+    transition: all 0.2s ease;
+    font-size: 14px;
+    height: 36px;
+    padding: 0 15px;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+} 

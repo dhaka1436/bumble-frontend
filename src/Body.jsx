@@ -1,6 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom"
 import { NonLoggedInHeader, LoggedInHeader } from "./components/Header/Header.jsx"
-import { Footer } from "./Footer"
 import { useSelector } from "react-redux"
 import { Navigate } from "react-router-dom"
 import axios from "axios";
