@@ -129,8 +129,11 @@
   }
   
   .buttonGroup {
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-top: 8px;
+    display: flex;
+    width: 100%;
+    align-items: center;
   }
   
   .saveButton {
@@ -152,6 +155,85 @@
     
     &:hover {
       opacity: 0.8;
+    }
+  }
+  
+  .errorContainer {
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  .errorAlert {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    animation: errorShake 0.5s;
+  }
+}
+
+@keyframes errorShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+// Side-by-side edit and preview layout
+.editContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  min-height: 90vh;
+  
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .editFormCard {
+    flex: 1;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .previewContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: #f9f9f9;
+    height: 90vh;
+    position: sticky;
+    top: 20px;
+    
+    .previewHeader {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    // Ensure the UserCard inside preview container is visible without scrolling
+    :global(.userCard) {
+      margin: 0 auto;
+      max-width: 350px;
+      transform: scale(0.9);
+      transform-origin: top center;
     }
   }
 } 

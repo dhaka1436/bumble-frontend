@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import styles from './UserCard.module.scss';
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, isPreview = false }) => {
 
     if (!user) return null;
 
@@ -33,10 +33,10 @@ const UserCard = ({ user }) => {
                     </div>
                 </div>
                 <div className={styles.buttonsContainer}>
-                    <button className={`${styles.actionButton} ${styles.ignoreButton}`}>
+                    <button className={`${styles.actionButton} ${styles.ignoreButton} ${isPreview ? styles.disabledButton : ''}`} disabled={isPreview}>
                         Ignore
                     </button>
-                    <button className={`${styles.actionButton} ${styles.interestedButton}`}>
+                    <button className={`${styles.actionButton} ${styles.interestedButton} ${isPreview ? styles.disabledButton : ''}`} disabled={isPreview}>
                         Interested
                     </button>
                 </div>

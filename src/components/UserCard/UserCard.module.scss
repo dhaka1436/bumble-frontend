@@ -8,6 +8,7 @@
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 20px;
+  overflow: scroll;
   
   &:hover {
     transform: translateY(-5px);

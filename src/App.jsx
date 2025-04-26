@@ -9,6 +9,9 @@ import appStore from "./utils/appStore"
 import LogIn from './components/LogInPage/LogIn.jsx'
 import Feed from './Feed'
 import Profile from './Profile.jsx'
+import { Notifications } from '@mantine/notifications'
+import '@mantine/notifications/styles.css'
+import Connections from './Connections.jsx'
 
 function App() {
     const appLayout = createBrowserRouter([
@@ -30,7 +33,7 @@ function App() {
                 },
                 {
                     path: "/connections",
-                    element: <h1> Connections List</h1>
+                    element: <Connections />
                 },
             ]
         },
@@ -38,6 +41,7 @@ function App() {
 
     return (
         <MantineProvider>
+            <Notifications position="top-right" zIndex={1000} />
             <Provider store={appStore}>
                 <RouterProvider router={appLayout} />
             </Provider>

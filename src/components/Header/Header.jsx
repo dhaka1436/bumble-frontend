@@ -80,7 +80,7 @@ export const LoggedInHeader = () => {
             <div className={styles.authContainer}>
                 <Link to="/profile">
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Federer_WM16_%2837%29_%2828136155830%29.jpg"
+                        src={user?.photoUrl}
                         alt="Profile"
                         className={styles.profileImage}
                     />

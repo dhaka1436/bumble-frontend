@@ -15,6 +15,9 @@ const Body = () => {
     const navigate = useNavigate();
 
 
+
+
+
     const fetchuser = async () => {
         try {
             const response = await axios.get(`${API_URL}/profile/view`, { withCredentials: true });

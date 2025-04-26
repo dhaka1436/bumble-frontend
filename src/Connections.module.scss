@@ -1,0 +1,16 @@
+.connections {
+  width: 100%;
+  padding: 16px;
+  
+  &__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  &__list {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+} 
