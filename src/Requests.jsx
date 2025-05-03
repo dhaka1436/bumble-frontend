@@ -9,6 +9,7 @@ import styles from './Requests.module.scss';
 const Requests = () => {
     const dispatch = useDispatch();
     const requests = useSelector(state => state.requests);
+    console.log("Requests are", requests);
 
     const getRequestsList = async () => {
         try {

@@ -14,10 +14,13 @@ const Feed = () => {
     const dispatch = useDispatch();
     const feed = useSelector(store => store.feed);
 
+    console.log("Feed is", feed);
+
 
 
     const getFeed = async () => {
         try {
+            console.log("Making get Feed API CAll");
             const response = await axios.get(`${API_URL}/user/feed`, { withCredentials: true });
 
             if (response?.data?.status === "success") {
@@ -32,16 +35,25 @@ const Feed = () => {
 
 
     useEffect(() => {
-        if (feed) getFeed();
+        if (!feed) getFeed();
     }, []);
 
     if (!user || !feed) return null;
+
+    if (feed.length === 0) return (
+        <div className={styles.noFeed}>
+            <div>
+                <h3>No New Users Found</h3>
+                <p>We're looking for more matches for you. Check back soon!</p>
+            </div>
+        </div>
+    );
 
     console.log("first user is ", feed);
 
     return (
         <div className={styles.feedContainer}>
-            <UserCard user={feed[5]} />
+            <UserCard user={feed[0]} />
         </div>
     )
 }

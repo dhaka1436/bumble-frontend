@@ -1,10 +1,16 @@
 import { TextInput, PasswordInput, NumberInput, Select, Button, Box, Grid, Group, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import styles from './SignUpForm.module.scss';
+import axios from 'axios';
+import { API_URL } from '../../utils/constants';
+import { notifications } from '@mantine/notifications';
+import { addUser } from '../../utils/userSlice';
+import { useDispatch } from 'react-redux';
 
 const SignUpForm = ({ setIsLogInForm }) => {
+    const dispatch = useDispatch();
     const form = useForm({
-        initialValues: { firstName: '', lastName: '', email: '', password: '', age: '', gender: '', },
+        initialValues: { firstName: 'User', lastName: 'Testing', email: 'h@gmail.com', password: 'abcd1234@A', age: '24', gender: 'male', },
         validate: {
             email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
             password: (value) => (value.length < 6 ? 'Password must be at least 6 characters' : null),
@@ -12,8 +18,21 @@ const SignUpForm = ({ setIsLogInForm }) => {
         },
     });
 
-    const handleSubmit = form.onSubmit((values) => {
-        console.log(values);
+    const handleSubmit = form.onSubmit(async (values) => {
+        try {
+            const response = await axios.post(`${API_URL}/auth/signup`, values, { withCredentials: true });
+            if (response?.data?.status === "success") {
+                notifications.show({
+                    title: "Signup Success",
+                    message: "Signup successful",
+                    color: "green",
+                });
+
+                dispatch(addUser(response?.data?.data));
+            }
+        } catch (error) {
+            console.error('Error signing up:', error);
+        }
     });
 
     return (

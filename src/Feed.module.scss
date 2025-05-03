@@ -8,3 +8,19 @@
   padding: 20px;
   background: linear-gradient(to bottom right, #f5f7fa, #e4e8f0);
 } 
+
+.noFeed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #5a5a5a;
+  background: linear-gradient(to bottom right, #f5f7fa, #e4e8f0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+} 

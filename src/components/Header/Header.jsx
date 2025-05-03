@@ -4,6 +4,9 @@ import axios from "axios";
 import { API_URL } from "../../utils/constants";
 import { useSelector, useDispatch } from "react-redux";
 import { removeUser } from "../../utils/userSlice";
+import { removeRequests } from "../../utils/requestsSlice";
+import { removeFeed } from "../../utils/feedSlice";
+import { removeConnections } from "../../utils/connectionsSlice";
 
 export const NonLoggedInHeader = () => {
     const navItems = [
@@ -33,7 +36,7 @@ export const NonLoggedInHeader = () => {
 
             <div className={styles.authContainer}>
                 <Link to="/login" className={styles.loginButton}>Log In</Link>
-                <Link to="/signup" className={styles.signupButton}>Sign Up</Link>
+
             </div>
         </div>
     )
@@ -56,6 +59,10 @@ export const LoggedInHeader = () => {
         console.log("logout response", response);
         if (response?.data?.status === "success") {
             dispatch(removeUser());
+            dispatch(removeRequests());
+            dispatch(removeFeed());
+            dispatch(removeConnections());
+
             navigate("/login");
         }
     }
