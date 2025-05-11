@@ -1,1 +1,1 @@
-export const API_URL = "/api";
+export const API_URL = location?.hostname === "localhost" ? "http://localhost:8000" : "/api";
